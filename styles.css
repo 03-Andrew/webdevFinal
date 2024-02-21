@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10%;
+}
+
+.nav_container {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.nav_item {
+  text-decoration: none;
+  padding: 10px;
+  color: #333;
+  cursor: pointer;
+}
+
+.nav_list {
+  list-style: none;
+  display: flex;
+}
+
+.nav_item.active {
+  font-weight: bold;
+}
+
+.nav_item_btn {
+  border-left: #333 solid 1.3px;
+  padding-left: 20px;
+  padding: 9px 25px;
+  background: linear-gradient(106.98deg, #E0B851 21.19%, #C99950 81.98%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0px 3px 5px 0px #3a3a3a80;
+  text-decoration: none;
+}
+
+
+
+.nav_item_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 15px 50px 0px #3a3a3a80;
+}
+
+.nav_item.last {
+  margin-right: 10px;
+  padding-right: 10px;
+}
+
+.form_container {
+  background-color: #e5e5e5;
+  height: 500px;
+}
+
+.logo {
+  width: 75%;
+}
