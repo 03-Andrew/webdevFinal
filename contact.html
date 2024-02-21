@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/8fc48bcaca.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <header>
     <div class="logo_container">
-      <h1>Precioso sPa</h1>
-
+      <h1>Precioso Spa</h1>
     </div>
     <nav class="nav_container">
       <ul class="nav_list">
@@ -27,10 +27,97 @@
   </header>
   <section>
     <div class="form_container">
+      <div class="title">
+        <h1>Send us a message</h1>
+      </div>
+      <div class="sub_text">
+        <ul>
+          <li><i class="fa-solid fa-envelope"></i> <a href="">preciosodavao@yahoo.com</a/li>
+          <li><i class="fa-solid fa-phone"></i> 0923-085-7065</li>
+          <li><i class="fa-brands fa-facebook"></i> <a href="">www.facebook.com/preciosofacial</a></li>
+        </ul>
+      </div>
+      <div class="form_message">
+        <p>If you have any questions related to our salon services, appointment or anything else, feel free to reach out and we'll be delighted to help!</p>
+      </div>
+      <form onsubmit="sendEmail(); reset(); return false;">
+        <div class="inputs">
+          <div class="left_side">
+            <input type="text" name="name" id="name" placeholder="Name">
+            <input type="email" name="email" id="email" placeholder="Emal">
+            <div class="phone-input">
+              <input type="range" name="number" id="number" min="60000000000" max="69999999999" step="1" value="65000000000" oninput="updatePhoneNumber(this.value)">
+              <div id="displayedValue">+63 <?php echo substr("65000000000", 1); ?></div>
 
+            </div>
+         </div>
+         <div class="right_side">
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+         </div>
+        </div>
+       <div>
+        <button type="submit">Submit</button>
+       </div>
+      </form>
+      
     </div>
   </section>
-  <img class="logo" src="assets/precioso_logo.svg" alt="logo">
+  <!-- <img class="logo" src="assets/precioso_logo.svg" alt="logo"> -->
+  <section class="location_container">
+    <div class="title">
+      <h1>Our Locations</h1>
+    </div>
+    <div class="map_container">
+      <iframe class="map" src="https://my.atlist.com/map/e2cc8e79-6c43-4382-852c-02157e2a7997?share=true" allow="geolocation 'self' https://my.atlist.com" width="100%" height="400px" loading="lazy" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    </div>
+
+    <div class="facades">
+
+      <div class="facade_container">
+        <div class="img_container">
+          <img src="assets/facade1.jpg" alt="">
+        </div>
+        <p>Door 28-A, Gahol Building, Ilustre St., Poblacion District</p>
+      </div>
+
+      <div class="facade_container">
+        <div class="img_container">
+          <img src="assets/facade2.png" alt="">
+        </div>
+        <p>Door 2, Charlotte Dormitel, Roxas Ave, Poblacion District</p>
+      </div>
+
+      
+    </div>
+
+  </section>
+  <footer>
+
+  </footer>
+
+  <script>
+    function updatePhoneNumber(value) {
+      const displayedValue = document.getElementById('displayedValue');
+      displayedValue.textContent = '+63 ' + value.toString().substring(1);
+    }
+    
+  </script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    function sendEmail(){
+      Email.send({
+          Host : "smtp.gmail.com",
+          Username : "username",
+          Password : "password",
+          To : 'them@website.com',
+          From : "you@isp.com",
+          Subject : "This is the subject",
+          Body : "And this is the body"
+      }).then(
+        message => alert(message)
+      );
+    }
+  </script>
 </body>
 
 </html>
